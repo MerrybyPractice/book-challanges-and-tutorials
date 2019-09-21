@@ -13,7 +13,7 @@ I selected this book in order to explore basic cryptography concepts. Given a ge
 
 ## Chapters
 
-### [Chapter 1: Making Paper Cryptography Tools](./python/cracking_codes_with_python/1_making_paper_cryptography_tools)
+### [Chapter 1: Making Paper Cryptography Tools](./1_making_paper_cryptography_tools)
 
 
 
