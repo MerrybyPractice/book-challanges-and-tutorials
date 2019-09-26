@@ -7,12 +7,12 @@ def main():
 
   def encrypt_message(key, message): 
     ciphertext = [''] * key
-    print(ciphertext)
+    
     for column in range(key): 
       current_index = column
 
       while current_index < len(message): 
-        print(current_index)
+        
         ciphertext[column] += message[current_index]
         
 
