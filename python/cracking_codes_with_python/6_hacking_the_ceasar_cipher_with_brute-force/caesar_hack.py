@@ -21,5 +21,3 @@ for key in range(len(SYMBOLS)):
           translated = translated + symbol
 
   print('Key #%s: %s' % (key, translated))     
-        
-
