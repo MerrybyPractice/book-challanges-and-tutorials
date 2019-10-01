@@ -2,9 +2,9 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
 import random, sys
-from ..f_encrypting_with_the_transposition_cipher import columnar_cipher
+from cracking_codes_with_python.f_encrypting_with_the_transposition_cipher import columnar_cipher
 
-from ..g_decrypting_with_the_transposition_cipher.decrypt_columnar_transposition_cipher import decrypt_message
+from cracking_codes_with_python_g_decrypting_with_the_transposition_cipher.decrypt_columnar_transposition_cipher import decrypt_message
 
 def main(): 
   random.seed(802) 
