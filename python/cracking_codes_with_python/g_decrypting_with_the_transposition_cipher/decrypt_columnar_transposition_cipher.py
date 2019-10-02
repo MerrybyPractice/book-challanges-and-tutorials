@@ -34,5 +34,5 @@ def decrypt_message(key, ciphertext):
   print(return_value)
   return return_value     
 
-if __name__ == '__main__': 
-  decrypt_message(key, ciphertext)
+# if __name__ == '__main__': 
+decrypt_message(key, ciphertext)

@@ -24,5 +24,5 @@ def main():
 
   print(ciphertext + '|')  
 
-if __name__ == '__main__':
-  main()
+#if __name__ == '__main__':
+main()
