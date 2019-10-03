@@ -1,10 +1,12 @@
 # Automated Testing for a Columnar Transpotion Cypher encoder and decoder per Cracking Codes with Python
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
-
+import os
+print('----')
+print(os.listdir())
 import random, sys
-from .f_encrypting_with_the_transposition_cipher import columnar_cipher
+from ..f_encrypting_with_the_transposition_cipher import columnar_cipher
 
-from .g_decrypting_with_the_transposition_cipher.decrypt_columnar_transposition_cipher import decrypt_message
+from ..g_decrypting_with_the_transposition_cipher.decrypt_columnar_transposition_cipher import decrypt_message
 
 def main(): 
   random.seed(802) 
@@ -28,5 +30,5 @@ def main():
         sys.exit()
   print('Transposition cipher test passed.')  
 
-  #if __name__ == '__main__': 
-main()    
+if __name__ == '__main__': 
+  main()    

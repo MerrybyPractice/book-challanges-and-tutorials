@@ -3,9 +3,6 @@
 
 import math
 
-ciphertext = input('What is the text you would like to decrypt? ')
-key = int(input('What is the key you would like to use? '))
-
 def decrypt_message(key, ciphertext): 
 
   num_columns = int(math.ceil(len(ciphertext)/float(key)))
@@ -34,5 +31,13 @@ def decrypt_message(key, ciphertext):
   print(return_value)
   return return_value     
 
-# if __name__ == '__main__': 
-decrypt_message(key, ciphertext)
+
+def main(): 
+  ciphertext = input('What is the text you would like to decrypt? ')
+  key = int(input('What is the key you would like to use? '))
+
+  decrypt_message(key, ciphertext)
+
+
+if __name__ == '__main__': 
+  decrypt_message(key, ciphertext)

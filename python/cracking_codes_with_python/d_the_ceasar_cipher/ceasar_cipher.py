@@ -1,6 +1,6 @@
 # Caesar Cipher guided by the example in chapter 5 of Cracking Codes with Python. 
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
-#import pyperclip
+import pyperclip
 
 message = input('Enter text to be encrypted here. ')
 key = int(input('Enter Encryption Key Here. '))
@@ -34,4 +34,4 @@ for symbol in message:
     translated = translated + symbol
 
 print(translated)
-#pyperclip.copy(translated)
+pyperclip.copy(translated)

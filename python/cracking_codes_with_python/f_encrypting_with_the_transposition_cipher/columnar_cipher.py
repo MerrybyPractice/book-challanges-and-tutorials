@@ -1,11 +1,7 @@
 # Colmunar Transposition Cipher Encryption as enumerated in chapter 7 of Cracking codes with Python. 
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-def main(): 
-  message = input('What is the message we will be encrypting? ')
-  key = int(input('What is the encryption key we will be using? '))
-
-  def encrypt_message(key, message): 
+def encrypt_message(key, message): 
     ciphertext = [''] * key
     
     for column in range(key): 
@@ -20,9 +16,13 @@ def main():
 
     return ''.join(ciphertext)
 
-  ciphertext = encrypt_message(key, message) 
+    ciphertext = encrypt_message(key, message) 
 
-  print(ciphertext + '|')  
+    print(ciphertext + '|')  
 
-#if __name__ == '__main__':
-main()
+def main(): 
+  message = input('What is the message we will be encrypting? ')
+  key = int(input('What is the encryption key we will be using? '))
+  encrypt_message(key, message)
+if __name__ == '__main__':
+  main()
