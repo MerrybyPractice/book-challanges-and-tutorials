@@ -4,9 +4,9 @@ import os
 print('----')
 print(os.listdir())
 import random, sys
-from ..f_encrypting_with_the_transposition_cipher import columnar_cipher
+from  f_columnar_cipher import encrypt_message as encrypt
 
-from ..g_decrypting_with_the_transposition_cipher.decrypt_columnar_transposition_cipher import decrypt_message
+from g_decrypt_columnar_transposition_cipher import decrypt_message as decrypt
 
 def main(): 
   random.seed(802) 
@@ -21,8 +21,8 @@ def main():
     print('Test #%s: "%s..."'%(i+1, message[:50]))
 
     for key in range(1, int(len(message)/2)):
-      encrypted = colmunar_cipher.colmunar_cipher(key, message) 
-      decrypted = decrypt_message.decrypt_message(key, encrypted)
+      encrypted = encrypt(key, message) 
+      decrypted = decrypt(key, encrypted)
 
       if message != decrypted: 
         print('Mismatch with key %s and message %s.' % (key, message))

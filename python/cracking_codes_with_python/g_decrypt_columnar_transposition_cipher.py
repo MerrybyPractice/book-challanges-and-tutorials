@@ -1,36 +1,30 @@
 # Columnar Transposition Ciper Decryption inspired by chapter 8 of Cracking Codes with Python 
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-import math
+import math, pyperclip
 
-def decrypt_message(key, ciphertext): 
+def decrypt_message(key, ciphertext):
 
-  num_columns = int(math.ceil(len(ciphertext)/float(key)))
+  num_columns = int(math.ceil(len(ciphertext) / float(key)))
 
-  #necessary?
   num_rows = key
 
-  extra_boxes = (num_columns * key) - len(ciphertext) 
+  extra_boxes = (num_columns * num_rows) - len(ciphertext)
 
-  plain_text = [''] * key
+  plaintext = [''] * num_columns
 
-  cur_column = 0
-  cur_row = 0
+  column = 0
+  row =0
 
-  for char in ciphertext: 
+  for symbol in ciphertext:
+    plaintext[column] += symbol
+    column += 1 # Point to the next column.
 
-    plain_text[cur_column] += char
-    cur_column += 1
-
-    if (cur_column == num_columns) or (cur_column == num_columns - 1 and cur_row >= key - extra_boxes): 
-
-      cur_column = 0
-      cur_row += 1
-
-  return_value = ''.join(plain_text)  
-  print(return_value)
-  return return_value     
-
+    if (column == num_columns) or (column == num_columns - 1 and row >= num_rows - extra_boxes):
+      column = 0
+      row += 1
+            
+  return ''.join(plaintext)
 
 def main(): 
   ciphertext = input('What is the text you would like to decrypt? ')
