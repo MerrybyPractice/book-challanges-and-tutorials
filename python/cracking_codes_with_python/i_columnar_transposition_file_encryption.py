@@ -3,9 +3,16 @@
 
 import time, os, sys 
 
-def main(file_name, mode): 
+from f_columnar_cipher import encrypt_message as encrypt
+
+from g_decrypt_columnar_transposition_cipher import decrypt_message as decrypt
+
+file_name = input('What file would you like to access? ')
+mode = input('Would you like to encrypt or decrypt this file?')
+
+def columnar_transposition_file(file_name, mode): 
   input_file_name = file_name
-  output_file_name = 'encrypted.txt'
+  output_file_name = 'assets/file_encryption/encrypted.txt'
   key = 123
   mode = mode #encrypt or decrypt 
 
@@ -16,7 +23,7 @@ def main(file_name, mode):
   if os.path.exists(output_file_name): 
     print('This will overwrite the file %s. 9(C)ontinue or (Q)uit?' %(output_file_name))
     response = input('> ')
-    if not response.lower.startswith('c'): 
+    if not response.lower().startswith('c'): 
       #I mean, a lot of things start with c that arent continue, but ok
       sys.exit()  
 
@@ -29,11 +36,10 @@ def main(file_name, mode):
   start_time = time.time()
 
   if mode == 'encrypt': 
-    translated = "pass"
-    #TODO:need to fix import statements before I can do this section
+    translated = encrypt(key, content)
   elif mode == 'decrypt': 
-    translated = "pass"
-    #TODO:need to fix import statements before I can do this section   
+    translated = decrypt(key, content)
+   
   total_time = round(time.time() - start_time, 2) 
   print('%sion time: %s secconds' %(mode.title, total_time))
 
@@ -42,6 +48,10 @@ def main(file_name, mode):
   output_file_object.close()
 
   print('Done %sing %s (%s characters).' % (mode, input_file_name, len(content)))
-  print('%sed file is %s.' (mode.title(), output_file_name))
+  print('%sed file is %s.' % (mode.title(), output_file_name))
 
+columnar_transposition_file(file_name, mode)
+
+# if __name__ == '__main__': 
+#   columnar_transposition_file()
 

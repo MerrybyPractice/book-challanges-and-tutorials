@@ -19,4 +19,4 @@ Determine the number of unused boxes = 32 - 30 = 2
 |_|s|_|
 |s|_|c|
 
-Common sense is not so common. 
+Common sense is not so common.
