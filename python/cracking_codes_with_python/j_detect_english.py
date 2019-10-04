@@ -54,8 +54,8 @@ def get_english_count(text, dictionary_file_string):
       matches += 1
   return float(matches) / len(possible_words)  
 
-def is_english(text, word_percentage = 20, letter_percentage = 85): 
-  words_match = get_english_count(text) * 100 >= word_percentage
+def is_english(text, dictionary_file_string='assets/dictionary.txt', word_percentage = 20, letter_percentage = 85): 
+  words_match = get_english_count(text, dictionary_file_string) * 100 >= word_percentage
   num_letters = len(remove_non_letters(text))   
 
   percent_letters_in_message = float(num_letters) / len(text) * 100

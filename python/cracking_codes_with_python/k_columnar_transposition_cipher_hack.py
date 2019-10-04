@@ -2,8 +2,8 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
 import pyperclip 
-from cracking_codes_with_python.j_detect_english import is_english
-from cracking_codes_with_python.g_decrypt_columnar_transposition_cipher import decrypt_message as decrypt 
+from j_detect_english import is_english
+from g_decrypt_columnar_transposition_cipher import decrypt_message as decrypt 
 
 def hack_transposition(text): 
   print('Press Ctrl-C to quit at any time.')
@@ -44,4 +44,7 @@ def main(text):
     pyperclip.copy(hacked_text)  
 
 if __name__ == '__main__': 
-  main()
+
+  text = input('What would you like to decrypt? ')
+
+  main(text)
