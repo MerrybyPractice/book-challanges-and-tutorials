@@ -63,4 +63,3 @@ def is_english(text, word_percentage = 20, letter_percentage = 85):
   letters_match = percent_letters_in_message >= letter_percentage
 
   return words_match and letters_match
-
