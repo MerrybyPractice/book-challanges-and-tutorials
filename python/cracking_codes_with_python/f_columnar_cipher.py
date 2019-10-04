@@ -24,5 +24,6 @@ def main():
   message = input('What is the message we will be encrypting? ')
   key = int(input('What is the encryption key we will be using? '))
   encrypt_message(key, message)
+  
 if __name__ == '__main__':
   main()
