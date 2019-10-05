@@ -10,20 +10,18 @@ def encrypt_message(key, message):
       while current_index < len(message): 
         
         ciphertext[column] += message[current_index]
-        
 
         current_index += key
-
+      
     return ''.join(ciphertext)
 
-    ciphertext = encrypt_message(key, message) 
-
-    print(ciphertext + '|')  
-
 def main(): 
+
   message = input('What is the message we will be encrypting? ')
   key = int(input('What is the encryption key we will be using? '))
-  encrypt_message(key, message)
+
+  ciphertext = encrypt_message(key, message)
+  print(ciphertext + '|')  
   
 if __name__ == '__main__':
   main()
